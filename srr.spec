@@ -9,8 +9,7 @@ Version:	1.3.12
 %define _rel	1
 Release:	%{_rel}
 License:	GPL
-Group:		Libraries/Development
-######		Unknown group!
+Group:		Development/Libraries
 Source0:	ftp://developers.cogentrts.com/pub/linux/%{name}-%{version}.tgz
 URL:		http://developers.cogentrts.com/srr.html
 %{!?_without_dist_kernel:BuildRequires:	kernel-source}
@@ -26,8 +25,18 @@ Linux allows you to write new code with S/R/R messaging on a single
 Linux machine, and to quickly port applications between QNX4 and
 Linux.
 
+%description -l pl
+Niektórzy uwa¿aj±, ¿e ¶wiat un*ksowy powinien siê czego¶ nauczyæ z
+QNX-a, a wysoko na tej li¶cie jest mechanizm komunikowania i
+synchronizacji poprzez Send/Receive/Reply, bêd±cy jedn± z
+charakterystycznych cech QNX-a. Modu³ j±dra SRRIPC dla Linuksa pozwala
+na pisanie nowego kodu u¿ywaj±cego komunikacji S/R/R na maszynie
+linuksowej i szybkie portowanie aplikacji miêdzy systemem QNX4 a
+Linuksem.
+
 %package -n kernel-misc-srripc
-Summary:	Kernel modules for QNX4 Style IPC
+Summary:	Linux kernel modules for QNX4 Style IPC
+Summary(pl):	Modu³y j±dra Linuksa do IPC w stylu QNX4
 Release:	%{_rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
 Prereq:		modutils >= 2.4.6-4
@@ -35,10 +44,14 @@ Prereq:		/sbin/depmod
 %{!?_without_dist_kernel:%requires_releq_kernel_up}
 
 %description -n kernel-misc-srripc
-Kernel modules for QNX4 Style IPC.
+Linux kernel modules for QNX4 Style IPC.
+
+%description -n kernel-misc-srripc -l pl
+Modu³y j±dra Linuksa do IPC w stylu QNX4.
 
 %package -n kernel-smp-misc-srripc
-Summary:	Kernel modules for QNX4 Style IPC
+Summary:	Linux SMP kernel modules for QNX4 Style IPC
+Summary(pl):	Modu³y j±dra Linuksa SMP do IPC w stylu QNX4
 Release:	%{_rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
 Prereq:		modutils >= 2.4.6-4
@@ -46,7 +59,10 @@ Prereq:		/sbin/depmod
 %{!?_without_dist_kernel:%requires_releq_kernel_smp}
 
 %description -n kernel-smp-misc-srripc
-Kernel modules for QNX4 Style IPC.
+Linux SMP kernel modules for QNX4 Style IPC.
+
+%description -n kernel-smp-misc-srripc -l pl
+Modu³y j±dra Linuksa SMP do IPC w stylu QNX4.
 
 %prep
 %setup -q
