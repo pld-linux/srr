@@ -11,6 +11,7 @@ Release:	%{_rel}
 License:	GPL
 Group:		Development/Libraries
 Source0:	ftp://developers.cogentrts.com/pub/linux/%{name}-%{version}.tgz
+# Source0-md5:	b61edee0962a3c2b62d87ad9ea4d46f8
 URL:		http://developers.cogentrts.com/srr.html
 %{!?_without_dist_kernel:BuildRequires:	kernel-headers}
 BuildRequires:	%{kgcc_package}
