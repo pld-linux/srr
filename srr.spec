@@ -1,7 +1,7 @@
-
+#
 # Conditional build:
 # _without_dist_kernel	- without sources of distribution kernel
-
+#
 Summary:	QNX4 Style Send/Receive/Reply Messaging for Linux
 Summary(pl):	Komunikowanie poprzez Send/Receive/Reply w stylu QNX
 Name:		srr
@@ -12,7 +12,7 @@ License:	GPL
 Group:		Development/Libraries
 Source0:	ftp://developers.cogentrts.com/pub/linux/%{name}-%{version}.tgz
 URL:		http://developers.cogentrts.com/srr.html
-%{!?_without_dist_kernel:BuildRequires:	kernel-source}
+%{!?_without_dist_kernel:BuildRequires:	kernel-headers}
 BuildRequires:	%{kgcc_package}
 ExclusiveArch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -111,7 +111,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc *.html NOTES TODO
 %attr(755,root,root) %{_bindir}/*
 %{_includedir}/*.h
-%{_includedir}/*/*.h
+%{_includedir}/sys/*.h
 %{_libdir}/*.a
 
 %files -n kernel-misc-srripc
