@@ -39,9 +39,9 @@ Summary:	Linux kernel modules for QNX4 Style IPC
 Summary(pl):	Modu³y j±dra Linuksa do IPC w stylu QNX4
 Release:	%{_rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
-Prereq:		modutils >= 2.4.6-4
-Prereq:		/sbin/depmod
 %{!?_without_dist_kernel:%requires_releq_kernel_up}
+PreReq:		modutils >= 2.4.6-4
+Requires(post,postun):	/sbin/depmod
 
 %description -n kernel-misc-srripc
 Linux kernel modules for QNX4 Style IPC.
@@ -54,9 +54,9 @@ Summary:	Linux SMP kernel modules for QNX4 Style IPC
 Summary(pl):	Modu³y j±dra Linuksa SMP do IPC w stylu QNX4
 Release:	%{_rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
-Prereq:		modutils >= 2.4.6-4
-Prereq:		/sbin/depmod
 %{!?_without_dist_kernel:%requires_releq_kernel_smp}
+PreReq:		modutils >= 2.4.6-4
+Requires(post,postun):	/sbin/depmod
 
 %description -n kernel-smp-misc-srripc
 Linux SMP kernel modules for QNX4 Style IPC.
@@ -94,17 +94,17 @@ install mod/srripc.o		$RPM_BUILD_ROOT/lib/modules/%{_kernel_ver}/misc/srripc.o
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post -n kernel-misc-srripc
-/sbin/depmod -a
+%post	-n kernel-misc-srripc
+/sbin/depmod -a -F /boot/System.map-%{_kernel_ver} %{_kernel_ver}
 
 %postun -n kernel-misc-srripc
-/sbin/depmod -a
+/sbin/depmod -a -F /boot/System.map-%{_kernel_ver} %{_kernel_ver}
 
-%post -n kernel-smp-misc-srripc
-/sbin/depmod -a
+%post	-n kernel-smp-misc-srripc
+/sbin/depmod -a -F /boot/System.map-%{_kernel_ver}smp %{_kernel_ver}smp
 
 %postun -n kernel-smp-misc-srripc
-/sbin/depmod -a
+/sbin/depmod -a -F /boot/System.map-%{_kernel_ver}smp %{_kernel_ver}smp
 
 %files
 %defattr(644,root,root,755)
