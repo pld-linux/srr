@@ -15,6 +15,7 @@ Source0:	ftp://developers.cogentrts.com/pub/linux/%{name}-%{version}.tgz
 URL:		http://developers.cogentrts.com/srr.html
 %{!?_without_dist_kernel:BuildRequires:	kernel-source}
 BuildRequires:	%{kgcc_package}
+ExclusiveArch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
