@@ -1,6 +1,6 @@
 #
 # Conditional build:
-# _without_dist_kernel	- without sources of distribution kernel
+%bcond_without	dist_kernel	# without sources of distribution kernel
 #
 Summary:	QNX4 Style Send/Receive/Reply Messaging for Linux
 Summary(pl):	Komunikowanie poprzez Send/Receive/Reply w stylu QNX
@@ -13,7 +13,7 @@ Group:		Development/Libraries
 Source0:	ftp://developers.cogentrts.com/pub/linux/%{name}-%{version}.tgz
 # Source0-md5:	b61edee0962a3c2b62d87ad9ea4d46f8
 URL:		http://developers.cogentrts.com/srr.html
-%{!?_without_dist_kernel:BuildRequires:	kernel-headers}
+%{?with_dist_kernel:BuildRequires:	kernel-headers}
 BuildRequires:	%{kgcc_package}
 BuildRequires:	rpmbuild(macros) >= 1.118
 ExclusiveArch:	%{ix86}
@@ -41,7 +41,7 @@ Summary:	Linux kernel modules for QNX4 Style IPC
 Summary(pl):	Modu³y j±dra Linuksa do IPC w stylu QNX4
 Release:	%{_rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
-%{!?_without_dist_kernel:%requires_releq_kernel_up}
+%{?with_dist_kernel:%requires_releq_kernel_up}
 PreReq:		modutils >= 2.4.6-4
 Requires(post,postun):	/sbin/depmod
 
@@ -56,7 +56,7 @@ Summary:	Linux SMP kernel modules for QNX4 Style IPC
 Summary(pl):	Modu³y j±dra Linuksa SMP do IPC w stylu QNX4
 Release:	%{_rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
-%{!?_without_dist_kernel:%requires_releq_kernel_smp}
+%{?with_dist_kernel:%requires_releq_kernel_smp}
 PreReq:		modutils >= 2.4.6-4
 Requires(post,postun):	/sbin/depmod
 
