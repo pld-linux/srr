@@ -42,7 +42,7 @@ Summary(pl):	Modu³y j±dra Linuksa do IPC w stylu QNX4
 Release:	%{_rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
 %{?with_dist_kernel:%requires_releq_kernel_up}
-PreReq:		modutils >= 2.4.6-4
+Requires:	modutils >= 2.4.6-4
 Requires(post,postun):	/sbin/depmod
 
 %description -n kernel-misc-srripc
@@ -57,7 +57,7 @@ Summary(pl):	Modu³y j±dra Linuksa SMP do IPC w stylu QNX4
 Release:	%{_rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
 %{?with_dist_kernel:%requires_releq_kernel_smp}
-PreReq:		modutils >= 2.4.6-4
+Requires:	modutils >= 2.4.6-4
 Requires(post,postun):	/sbin/depmod
 
 %description -n kernel-smp-misc-srripc
