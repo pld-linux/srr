@@ -3,7 +3,7 @@
 %bcond_without	dist_kernel	# without sources of distribution kernel
 #
 Summary:	QNX4 Style Send/Receive/Reply Messaging for Linux
-Summary(pl.UTF-8):   Komunikowanie poprzez Send/Receive/Reply w stylu QNX
+Summary(pl.UTF-8):	Komunikowanie poprzez Send/Receive/Reply w stylu QNX
 Name:		srr
 Version:	1.3.12
 %define _rel	1
@@ -38,7 +38,7 @@ Linuksem.
 
 %package -n kernel-misc-srripc
 Summary:	Linux kernel modules for QNX4 Style IPC
-Summary(pl.UTF-8):   Moduły jądra Linuksa do IPC w stylu QNX4
+Summary(pl.UTF-8):	Moduły jądra Linuksa do IPC w stylu QNX4
 Release:	%{_rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
 %{?with_dist_kernel:%requires_releq_kernel_up}
@@ -53,7 +53,7 @@ Moduły jądra Linuksa do IPC w stylu QNX4.
 
 %package -n kernel-smp-misc-srripc
 Summary:	Linux SMP kernel modules for QNX4 Style IPC
-Summary(pl.UTF-8):   Moduły jądra Linuksa SMP do IPC w stylu QNX4
+Summary(pl.UTF-8):	Moduły jądra Linuksa SMP do IPC w stylu QNX4
 Release:	%{_rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
 %{?with_dist_kernel:%requires_releq_kernel_smp}
