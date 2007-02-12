@@ -3,7 +3,7 @@
 %bcond_without	dist_kernel	# without sources of distribution kernel
 #
 Summary:	QNX4 Style Send/Receive/Reply Messaging for Linux
-Summary(pl):	Komunikowanie poprzez Send/Receive/Reply w stylu QNX
+Summary(pl.UTF-8):   Komunikowanie poprzez Send/Receive/Reply w stylu QNX
 Name:		srr
 Version:	1.3.12
 %define _rel	1
@@ -27,18 +27,18 @@ Linux allows you to write new code with S/R/R messaging on a single
 Linux machine, and to quickly port applications between QNX4 and
 Linux.
 
-%description -l pl
-Niektórzy uwa¿aj±, ¿e ¶wiat un*ksowy powinien siê czego¶ nauczyæ z
-QNX-a, a wysoko na tej li¶cie jest mechanizm komunikowania i
-synchronizacji poprzez Send/Receive/Reply, bêd±cy jedn± z
-charakterystycznych cech QNX-a. Modu³ j±dra SRRIPC dla Linuksa pozwala
-na pisanie nowego kodu u¿ywaj±cego komunikacji S/R/R na maszynie
-linuksowej i szybkie portowanie aplikacji miêdzy systemem QNX4 a
+%description -l pl.UTF-8
+NiektÃ³rzy uwaÅ¼ajÄ…, Å¼e Å›wiat un*ksowy powinien siÄ™ czegoÅ› nauczyÄ‡ z
+QNX-a, a wysoko na tej liÅ›cie jest mechanizm komunikowania i
+synchronizacji poprzez Send/Receive/Reply, bÄ™dÄ…cy jednÄ… z
+charakterystycznych cech QNX-a. ModuÅ‚ jÄ…dra SRRIPC dla Linuksa pozwala
+na pisanie nowego kodu uÅ¼ywajÄ…cego komunikacji S/R/R na maszynie
+linuksowej i szybkie portowanie aplikacji miÄ™dzy systemem QNX4 a
 Linuksem.
 
 %package -n kernel-misc-srripc
 Summary:	Linux kernel modules for QNX4 Style IPC
-Summary(pl):	Modu³y j±dra Linuksa do IPC w stylu QNX4
+Summary(pl.UTF-8):   ModuÅ‚y jÄ…dra Linuksa do IPC w stylu QNX4
 Release:	%{_rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
 %{?with_dist_kernel:%requires_releq_kernel_up}
@@ -48,12 +48,12 @@ Requires(post,postun):	/sbin/depmod
 %description -n kernel-misc-srripc
 Linux kernel modules for QNX4 Style IPC.
 
-%description -n kernel-misc-srripc -l pl
-Modu³y j±dra Linuksa do IPC w stylu QNX4.
+%description -n kernel-misc-srripc -l pl.UTF-8
+ModuÅ‚y jÄ…dra Linuksa do IPC w stylu QNX4.
 
 %package -n kernel-smp-misc-srripc
 Summary:	Linux SMP kernel modules for QNX4 Style IPC
-Summary(pl):	Modu³y j±dra Linuksa SMP do IPC w stylu QNX4
+Summary(pl.UTF-8):   ModuÅ‚y jÄ…dra Linuksa SMP do IPC w stylu QNX4
 Release:	%{_rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
 %{?with_dist_kernel:%requires_releq_kernel_smp}
@@ -63,8 +63,8 @@ Requires(post,postun):	/sbin/depmod
 %description -n kernel-smp-misc-srripc
 Linux SMP kernel modules for QNX4 Style IPC.
 
-%description -n kernel-smp-misc-srripc -l pl
-Modu³y j±dra Linuksa SMP do IPC w stylu QNX4.
+%description -n kernel-smp-misc-srripc -l pl.UTF-8
+ModuÅ‚y jÄ…dra Linuksa SMP do IPC w stylu QNX4.
 
 %prep
 %setup -q
